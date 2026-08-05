@@ -1,13 +1,7 @@
 @extends ('layouts.app')
 
-@section('title', "Sistem Sekolah - Daftar Siswa")
-@php
-    $alertType = "WARNING";
-@endphp
- 
-<x-alert :type="$alertType">
-    Terdapat kesalahan pada sistem banana
-</x-alert>
+@section('title',$title)
+
 
 @section('content')
 
@@ -19,13 +13,13 @@
             <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Tahun Ajaran
                 2025/2026</p>
 
-            <h1 class="font-display text-3xl font-semibold text-[#16213A]">Daftar Siswa</h1>
+            <h1 class="font-display text-3xl font-semibold text-[#16213A]">Daftar Guru</h1>
 
         </div>
 
         <a href="" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
 
-            Catat Siswa Baru
+            Catat Guru Baru
 
         </a>
 
@@ -43,42 +37,60 @@
 
                     <th class="w-14 px-5 py-3.5 font-semibold">No.</th>
 
-                    <th class="px-5 py-3.5 font-semibold">NIS</th>
+                    <th class="px-5 py-3.5 font-semibold">NIP</th>
 
-                    <th class="px-5 py-3.5 font-semibold">Nama Siswa</th>
+                    <th class="px-5 py-3.5 font-semibold">Nama Lengkap</th>
 
-                    <th class="px-5 py-3.5 font-semibold">Kelas</th>
+                    <th class="px-5 py-3.5 font-semibold">Jenis Kelamin</th>
 
-                    <th class="px-5 py-3.5 font-semibold">Jurusan</th>
+                    <th class="px-5 py-3.5 font-semibold">Mata Pelajaran</th>
 
-                    <th class="px-5 py-3.5 text-right font-semibold">Tindakan</th>
+                    <th class="px-5 py-3.5 font-semibold">No Telepon</th>
+
+                    <th class="px-5 py-3.5 font-semibold">Status</th>
+
+                     <th class="px-5 py-3.5 font-semibold">Tindakan</th>
 
                 </tr>
 
             </thead>
 
             <tbody>
-                @foreach ($students as $student )
+                @foreach ($teachers as $teacher )
                 <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
 
                     <td class="px-5 py-4 font-display text-lg text-[#A16207]">
                         {{ $loop -> iteration }}
                     </td>
 
-                    <td class="px-5 py-4 font-mono text-xs text-slate-500">
-                        {{ $student['nis'] }}
-                    </td>
+                   
 
                     <td class="px-5 py-4 font-medium text-[#16213A]">
-                        {{ $student['name'] }}
+                        {{ $teacher['nip'] }}
                     </td>
 
                     <td class="px-5 py-4">
-                        {{ $student['class'] }}
+                        {{ $teacher['name'] }}
                     </td>
 
                     <td class="px-5 py-4">
-                        {{ $student['major'] }}
+                        {{ $teacher['gender'] }}
+                    </td>
+
+                    <td class="px-5 py-4">
+                        {{ $teacher['subject'] }}
+                    </td>
+
+                     <td class="px-5 py-4">
+                        {{ $teacher['phone'] }}
+                    </td>
+
+                     <td class="px-5 py-4">
+                        {{ $teacher['status'] }}
+                    </td>
+
+                     <td class="px-5 py-4">
+                        {{ $teacher['action'] }}
                     </td>
 
                     <td class="px-5 py-4">

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index()
-    {
+    
+{
         $title = "Sistem Sekolah - Daftar Siswa";
         $students = [
         [
@@ -45,7 +46,6 @@ class StudentController extends Controller
             'students' => $students
         ]);
     }
-
     public function show(string $id)
     {
         $title = "Sistem Sekolah - Detail Siswa";
