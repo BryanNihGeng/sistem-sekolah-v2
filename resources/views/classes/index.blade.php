@@ -44,6 +44,7 @@
 
                     <th class="px-5 py-3.5 font-semibold">Wali Kelas</th>
 
+                    <th class="px-5 py-3.5 text-right font-semibold">Tindakan</th>
 
                 </tr>
 

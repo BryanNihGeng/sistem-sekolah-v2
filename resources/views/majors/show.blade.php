@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @section('content')
-    <a href="{{ route('students.index', ['id' => 1]) }}"
+    <a href="{{ route('majors.index') }}"
         class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku Induk</a>
 
 
@@ -14,11 +14,12 @@
 
             <div>
 
-                <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Lembar Siswa</p>
+                <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-[#A16207]">Majors</p>
 
-                <h1 class="font-display text-3xl font-semibold text-[#16213A]">Budi Ariyanto</h1>
+                <h1 class="font-display text-3xl font-semibold text-[#16213A]">AKL</h1>
 
-                <p class="mt-1 font-mono text-xs text-slate-500">NIS 2024001</p>
+                <p class="mt-1 font-mono text-xs text-slate-500">Akuntansi dan Keuangan Lembaga</p>
+
 
             </div>
 
@@ -33,41 +34,25 @@
 
             <div class="flex justify-between px-8 py-4">
 
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">NIS</dt>
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Code</dt>
 
-                <dd class="font-medium text-[#16213A]">2024001</dd>
-
-            </div>
-
-            <div class="flex justify-between px-8 py-4">
-
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Nama Lengkap</dt>
-
-                <dd class="font-medium text-[#16213A]">Budi Ariyanto</dd>
+                <dd class="font-medium text-[#16213A]">AKL</dd>
 
             </div>
 
             <div class="flex justify-between px-8 py-4">
 
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Jenis Kelamin</dt>
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Name</dt>
 
-                <dd class="font-medium text-[#16213A]">Laki-laki</dd>
-
-            </div>
-
-            <div class="flex justify-between px-8 py-4">
-
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Jurusan</dt>
-
-                <dd class="font-medium text-[#16213A]">RPL</dd>
+                <dd class="font-medium text-[#16213A]">Akuntansi dan Keuangan Lembaga</dd>
 
             </div>
 
             <div class="flex justify-between px-8 py-4">
 
-                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Kelas</dt>
+                <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Description</dt>
 
-                <dd class="font-medium text-[#16213A]">XII AKL 1</dd>
+                <dd class="font-medium text-[#16213A]">Program keahlian yang membekali murid dengan kompetensi pencatatan dan pelaporan keuangan</dd>
 
             </div>
 

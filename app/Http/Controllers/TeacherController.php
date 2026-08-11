@@ -52,7 +52,7 @@ class TeacherController extends Controller
         ];
         return view('teachers.index', [
             'title' => $title,
-            'teachers' => $teachers
+            'teacher' => $teachers
         ]);
     }
 

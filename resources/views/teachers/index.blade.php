@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title',$title)
+@section('title', $title)
 
 
 @section('content')
@@ -17,7 +17,8 @@
 
         </div>
 
-        <a href="" class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
+        <a href="{{ route('teachers.show', ['id' => 1]) }}"
+            class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
 
             Catat Guru Baru
 
@@ -39,84 +40,78 @@
 
                     <th class="px-5 py-3.5 font-semibold">NIP</th>
 
-                    <th class="px-5 py-3.5 font-semibold">Nama Lengkap</th>
+                    <th class="px-5 py-3.5 font-semibold">Nama Guru</th>
 
-                    <th class="px-5 py-3.5 font-semibold">Jenis Kelamin</th>
+                    <th class="px-5 py-3.5 font-semibold">Gender</th>
 
-                    <th class="px-5 py-3.5 font-semibold">Mata Pelajaran</th>
+                    <th class="px-5 py-3.5 font-semibold">Subject</th>
 
-                    <th class="px-5 py-3.5 font-semibold">No Telepon</th>
+                    <th class="px-5 py-3.5 font-semibold">Phone</th>
 
-                    <th class="px-5 py-3.5 font-semibold">Status</th>
-
-                     <th class="px-5 py-3.5 font-semibold">Tindakan</th>
+                    <th class="px-5 py-3.5 text-right font-semibold">Status</th>
 
                 </tr>
 
             </thead>
 
             <tbody>
-                @foreach ($teachers as $teacher )
-                <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
+                @foreach ($teacher as $teachers)
+                    <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
 
-                    <td class="px-5 py-4 font-display text-lg text-[#A16207]">
-                        {{ $loop -> iteration }}
-                    </td>
+                        <td class="px-5 py-4 font-display text-lg text-[#A16207]">
+                            {{ $loop->iteration }}
+                        </td>
 
-                   
+                        <td class="px-5 py-4 font-mono text-xs text-slate-500">
+                            {{ $teachers['nip'] }}
+                        </td>
 
-                    <td class="px-5 py-4 font-medium text-[#16213A]">
-                        {{ $teacher['nip'] }}
-                    </td>
+                        <td class="px-5 py-4 font-medium text-[#16213A]">
+                            {{ $teachers['name'] }}
+                        </td>
 
-                    <td class="px-5 py-4">
-                        {{ $teacher['name'] }}
-                    </td>
+                        <td class="px-5 py-4">
+                            {{ $teachers['gender'] }}
+                        </td>
 
-                    <td class="px-5 py-4">
-                        {{ $teacher['gender'] }}
-                    </td>
+                        <td class="px-5 py-4">
+                            {{ $teachers['subject'] }}
+                        </td>
 
-                    <td class="px-5 py-4">
-                        {{ $teacher['subject'] }}
-                    </td>
+                        <td class="px-5 py-4">
+                            {{ $teachers['phone'] }}
+                        </td>
 
-                     <td class="px-5 py-4">
-                        {{ $teacher['phone'] }}
-                    </td>
+                        <td class="px-5 py-4">
+                            <x-status-badge :status="$teachers['status']" />
+                        </td>
 
-                     <td class="px-5 py-4">
-                        {{ $teacher['status'] }}
-                    </td>
+                        <td class="px-5 py-4">
 
-                     <td class="px-5 py-4">
-                        {{ $teacher['action'] }}
-                    </td>
+                            <div class="flex justify-end gap-4 text-xs font-medium">
 
-                    <td class="px-5 py-4">
+                                <a href="{{ route('teachers.show', ['id' => 1]) }}"
+                                    class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
 
-                        <div class="flex justify-end gap-4 text-xs font-medium">
+                                <a href="{{ route('teachers.edit', ['id' => 1]) }}"
+                                    class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
 
-                            <a href="{{ route('students.show', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
-
-                            <a href="{{ route('students.edit', ['id' => 1]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
-
-                            <form action="" method="POST"
-                                onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
+                                <form action="" method="POST"
+                                    onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
 
 
 
-                                <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
+                                    <button type="submit" class="text-red-700 hover:text-red-900">Hapus</button>
 
-                            </form>
+                                </form>
 
-                        </div>
+                            </div>
 
-                    </td>
+                        </td>
 
-                </tr>
+                    </tr>
                 @endforeach
-                
+
 
             </tbody>
 
