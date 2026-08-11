@@ -52,7 +52,8 @@
 
                 <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Description</dt>
 
-                <dd class="font-medium text-[#16213A]">Program keahlian yang membekali murid dengan kompetensi pencatatan dan pelaporan keuangan</dd>
+                <dd class="font-medium text-[#16213A]">Program keahlian yang membekali murid dengan kompetensi pencatatan
+                    dan pelaporan keuangan</dd>
 
             </div>
 
