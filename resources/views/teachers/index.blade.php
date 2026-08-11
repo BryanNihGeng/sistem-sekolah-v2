@@ -17,7 +17,7 @@
 
         </div>
 
-        <a href="{{ route('teachers.show', ['id' => 1]) }}"
+        <a href="{{ route('teachers.create', ['id' => 1]) }}"
             class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">
 
             Catat Guru Baru
@@ -55,7 +55,7 @@
             </thead>
 
             <tbody>
-                @foreach ($teacher as $teachers)
+                @foreach ($teachers as $teacher)
                     <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
 
                         <td class="px-5 py-4 font-display text-lg text-[#A16207]">
@@ -63,27 +63,27 @@
                         </td>
 
                         <td class="px-5 py-4 font-mono text-xs text-slate-500">
-                            {{ $teachers['nip'] }}
+                            {{ $teacher['nip'] }}
                         </td>
 
                         <td class="px-5 py-4 font-medium text-[#16213A]">
-                            {{ $teachers['name'] }}
+                            {{ $teacher['name'] }}
                         </td>
 
                         <td class="px-5 py-4">
-                            {{ $teachers['gender'] }}
+                            {{ $teacher['gender'] }}
                         </td>
 
                         <td class="px-5 py-4">
-                            {{ $teachers['subject'] }}
+                            {{ $teacher['subject'] }}
                         </td>
 
                         <td class="px-5 py-4">
-                            {{ $teachers['phone'] }}
+                            {{ $teacher['phone'] }}
                         </td>
 
                         <td class="px-5 py-4">
-                            <x-status-badge :status="$teachers['status']" />
+                            <x-status-badge :status="$teacher['status']" />
                         </td>
 
                         <td class="px-5 py-4">

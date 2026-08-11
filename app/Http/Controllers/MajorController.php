@@ -10,52 +10,34 @@ class MajorController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    { {
-            $title = "Sistem Sekolah - Daftar Jurusan";
-            $majors = [
-                [
+    {
+        $title = "Sistem Sekolah - Daftar Majors";
+        $major = [
+            [
+                'id' => 1,
+                'code' => 'AKL',
+                'name' => 'Akuntansi dan Keuangan Lembaga',
+                'description' => 'Program keahlian yang membekali murid dengan kompetensi pencatatan dan pelaporan keuangan.',
+            ],
+            [
+                'id' => 2,
+                'code' => 'TKJ',
+                'name' => 'Teknik Komputer dan Jaringan',
+                'description' => 'Program keahlian yang membekali murid dengan kompetensi instalasi, konfigurasi, dan pemeliharaan jaringan komputer.',
+            ],
+            [
+                'id' => 3,
+                'code' => 'BD',
+                'name' => 'Bisnis Digital',
+                'description' => 'Program keahlian yang membekali murid dengan kompetensi pemasaran dan pengelolaan bisnis berbasis digital.',
+            ],
+        ];
 
-                    'id' => 1,
+        return view('majors.index', [
+            'title' => $title,
+            'majors' => $major
+        ]);
 
-                    'code' => 'AKL',
-
-                    'name' => 'Akuntansi dan Keuangan Lembaga',
-
-                    'description' => 'Program keahlian yang membekali murid dengan kompetensi pencatatan dan pelaporan keuangan.',
-
-                ],
-
-                [
-
-                    'id' => 2,
-
-                    'code' => 'TKJ',
-
-                    'name' => 'Teknik Komputer dan Jaringan',
-
-                    'description' => 'Program keahlian yang membekali murid dengan kompetensi instalasi, konfigurasi, dan pemeliharaan jaringan komputer.',
-
-                ],
-
-                [
-
-                    'id' => 3,
-
-                    'code' => 'BD',
-
-                    'name' => 'Bisnis Digital',
-
-                    'description' => 'Program keahlian yang membekali murid dengan kompetensi pemasaran dan pengelolaan bisnis berbasis digital.',
-
-                ],
-
-            ];
-
-            return view('majors.index', [
-                'title' => $title,
-                'majors' => $majors
-            ]);
-        }
     }
 
     /**
@@ -63,9 +45,10 @@ class MajorController extends Controller
      */
     public function create()
     {
-         $title = "Sistem Sekolah - Tambah Jurusan";
+        $title = "Sistem Sekolah - Create Major";
+
         return view('majors.create', [
-            'title' => $title
+            'title' => $title,
         ]);
     }
 
@@ -74,7 +57,7 @@ class MajorController extends Controller
      */
     public function store(Request $request)
     {
-        return "Menambah data jurusan baru";
+        return "Menambah data major baru";
     }
 
     /**
@@ -82,9 +65,10 @@ class MajorController extends Controller
      */
     public function show(string $id)
     {
-        $title = "Sistem Sekolah - Detail Jurusan";
+        $title = "Sistem Sekolah - Detail Major";
+
         return view('majors.show', [
-            'title' => $title
+            'title' => $title,
         ]);
     }
 
@@ -93,9 +77,10 @@ class MajorController extends Controller
      */
     public function edit(string $id)
     {
-          $title = "Sistem Sekolah - Edit Jurusan";
+        $title = "Sistem Sekolah - Edit Major";
+
         return view('majors.edit', [
-            'title' => $title
+            'title' => $title,
         ]);
     }
 
@@ -104,7 +89,7 @@ class MajorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return "Mengubah data jurusan dengan ID: {$id}";
+        return "Mengubah data major dengan ID: $id";
     }
 
     /**
@@ -112,6 +97,6 @@ class MajorController extends Controller
      */
     public function destroy(string $id)
     {
-        return "Menghapus data jurusan dengan ID: {$id}";
+        return "Menghapus data kelas dengan ID: {$id}";
     }
 }
