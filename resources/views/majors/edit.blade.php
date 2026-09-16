@@ -26,7 +26,7 @@
             <label for="code"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Code</label>
 
-            <input type="text" id="nis" name="nis" value="AKL"
+            <input type="text" id="code" name="code" value="AKL"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
@@ -49,7 +49,7 @@
             <label for="description"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Description</label>
 
-            <input type="text" id="class" name="class"
+            <input type="text" id="description" name="description"
                 value="Program keahlian yang membekali murid dengan kompetensi pencatatan dan pelaporan keuangan."
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 

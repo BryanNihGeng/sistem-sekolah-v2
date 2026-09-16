@@ -59,7 +59,7 @@
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
                 @foreach ($majors as $major)
-                    <option value="{{ $major['id'] }}" {{ $major['id']}}>
+                    <option value="{{ $major['id'] }}" @selected($class['major_id'] == $major['id'])>
                         {{ $major['name'] }}
                     </option>
                 @endforeach
@@ -77,7 +77,7 @@
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
                 @foreach ($teachers as $teacher)
-                    <option value="{{ $teacher['id'] }}" {{ $teacher['id']}}>
+                    <option value="{{ $teacher['id'] }}" @selected($class['teacher_id'] == $teacher['id'])>
                         {{ $teacher['name']}}
                     </option>
                 @endforeach

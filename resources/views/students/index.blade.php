@@ -85,10 +85,10 @@
 
                             <div class="flex justify-end gap-4 text-xs font-medium">
 
-                                <a href="{{ route('students.show', ['id' => 1]) }}"
+                                <a href="{{ route('students.show', ['id' => $student['id']]) }}"
                                     class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
 
-                                <a href="{{ route('students.edit', ['id' => 1]) }}"
+                                <a href="{{ route('students.edit', ['id' => $student['id']]) }}"
                                     class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
 
                                 <form action="" method="POST"

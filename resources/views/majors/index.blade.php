@@ -83,7 +83,7 @@
                                     class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
 
                                 <form action="" method="POST"
-                                    onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
+                                    onsubmit="return confirm('Hapus data jurusan ini dari buku induk?')">
 
 
 

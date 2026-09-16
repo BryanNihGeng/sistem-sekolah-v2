@@ -27,7 +27,7 @@
             <label for="code"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Code</label>
 
-            <input type="text" id="nis" name="nis" placeholder="Contoh: AKL, TKJ, BD"
+            <input type="text" id="code" name="code" placeholder="Contoh: AKL, TKJ, BD"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
@@ -51,7 +51,7 @@
             <label for="description"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Description</label>
 
-            <input type="text" id="class" name="class" placeholder="Penjelasan singkat mengenai jurusan"
+            <input type="text" id="description" name="description" placeholder="Penjelasan singkat mengenai jurusan"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>

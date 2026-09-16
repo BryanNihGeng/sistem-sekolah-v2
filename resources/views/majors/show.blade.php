@@ -23,7 +23,7 @@
 
             </div>
 
-            <a href="#"
+            <a href="{{ route('majors.edit', ['major' => 1]) }}"
                 class="bg-[#16213A] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#26324f]">Ubah</a>
 
         </div>
@@ -63,9 +63,9 @@
 
         <div class="flex justify-end gap-4 border-t border-[#E5E3DB] px-8 py-5">
 
-            <a href="" class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Kembali</a>
+            <a href="{{ route('majors.index') }}" class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Kembali</a>
 
-            <form action="" method="POST" onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
+            <form action="" method="POST" onsubmit="return confirm('Hapus data jurusan ini dari buku induk?')">
 
                 @csrf
 

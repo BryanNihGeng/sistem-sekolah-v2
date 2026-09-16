@@ -26,7 +26,7 @@
             <label for="nip"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">NIP</label>
 
-            <input type="text" id="nis" name="nis" value="2024001"
+            <input type="text" id="nip" name="nip" value="2024001"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
@@ -65,20 +65,20 @@
 
         <div>
 
-            <label for="class"
+            <label for="subject"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Subject</label>
 
-            <input type="text" id="class" name="class" value="Akutansi Dasar"
+            <input type="text" id="subject" name="subject" value="Akutansi Dasar"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
 
         <div>
 
-            <label for="class"
+            <label for="phone_number"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Phone</label>
 
-            <input type="text" id="class" name="class" value="081234560001"
+            <input type="text" id="phone_number" name="phone_number" value="081234560001"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
         </div>
@@ -92,9 +92,9 @@
             <select id="status" name="status"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
-                <option value="A">Aktif</option>
+                <option value="Aktif">Aktif</option>
 
-                <option value="TA">Tidak Aktif</option>
+                <option value="Tidak Aktif">Tidak Aktif</option>
 
             </select>
 
