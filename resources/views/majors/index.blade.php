@@ -102,8 +102,7 @@
             </tbody>
 
         </table>
-
-    </div>
+   
 
 
 @endsection

@@ -2,21 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Student\StoreRequest;
+use App\Http\Requests\Student\UpdateRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\UriQueryString;
 
 class StudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $title = "Sistem Sekolah - Daftar Siswa";
+        $search = $request->query('search');
+        $class = $request->query('class');
+        $major = $request->query('major');
 
-        $students =  Student::select(['id', 'nis', 'name', 'class' , 'major'])
-        ->get();
+        $students = Student::select(['id', 'nis', 'name', 'class', 'major'])
+            ->when($search, function ($query, $search) {
+                $query->where(function ($query) use ($search) {
+                    $query->where('name', 'like', "%{$search}%")
+                        ->orWhere('nis', 'like', "%{$search}%");
+                });
+            })
+            ->when($class, fn($query, $class) => $query->where('class', '=', $class))
+            ->when($major, fn($query, $major) => $query->where('major', '=', $major))
+            ->paginate(10)
+            ->withQueryString();
+
+        $schoolClasses = ['10 AKL', '11 AKL', '11 TKJ 1', '11 TKJ 2', '10 BiD', '12 TKJ 1', '12 TKJ 2', '12 TKJ 3'];
+        $majors = ['AKL', 'BiD', 'TKJ'];
+
 
         return view('students.index', [
             'title' => $title,
-            'students' => $students
+            'students' => $students,
+            'schoolClasses' => $schoolClasses,
+            'majors' => $majors
         ]);
     }
 
@@ -27,7 +48,7 @@ class StudentController extends Controller
     {
         $title = "Sistem Sekolah - Detail Siswa";
         $description = "Menampilkan daftar siswa yang terdaftar";
-        
+
 
         return view('students.show', [
             'title' => $title,
@@ -64,13 +85,13 @@ class StudentController extends Controller
         // Validasi
         $validatedRequest = $request->validated();
         Student::create($validatedRequest);
-       
+
         return redirect()->route('students.index');
     }
 
     public function update(Student $student, UpdateRequest $request)
     {
-         $validatedRequest = $request->validated();
+        $validatedRequest = $request->validated();
 
         $student->update($validatedRequest);
         return redirect()->route('students.index');
@@ -78,7 +99,7 @@ class StudentController extends Controller
 
     public function destroy(Student $student)
     {
-       $student->delete();
-       return redirect()->route('students.index');
+        $student->delete();
+        return redirect()->route('students.index');
     }
 }

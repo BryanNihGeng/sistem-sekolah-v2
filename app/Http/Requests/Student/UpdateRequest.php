@@ -23,9 +23,9 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'nis' => ['required', 'string', 'size:4', 'unique:students,nis' . $this->student->id],
+                'nis' => ['required', 'string', 'size:4', 'unique:students,nis,' . $this->student->id],
             'name' => ['required', 'string'],
-            'gender' => ['required', 'string', 'in:Laki-laki, Perempuan'],
+            'gender' => ['required', 'string', 'in:Laki-Laki,Perempuan'],
             'major' => ['required', 'string', 'in:AKL,TKJ,BiD'],
             'class' => ['required', 'string'],
         ];
