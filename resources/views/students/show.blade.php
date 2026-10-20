@@ -59,7 +59,7 @@
 
                 <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Jurusan</dt>
 
-                <dd class="font-medium text-[#16213A]">{{ $student->major }}</dd>
+                <dd class="font-medium text-[#16213A]">{{ $student->major?->name }}</dd>
 
             </div>
 
@@ -67,7 +67,7 @@
 
                 <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Kelas</dt>
 
-                <dd class="font-medium text-[#16213A]">{{ $student->class }}</dd>
+                <dd class="font-medium text-[#16213A]">{{ $student->schoolClass?->names }}</dd>
 
             </div>
 
@@ -77,7 +77,7 @@
 
         <div class="flex justify-end gap-4 border-t border-[#E5E3DB] px-8 py-5">
 
-            <a href="{{ route('students.destroy', ['student' => $student->id]) }}" class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Kembali</a>
+            <a href="{{ route('students.index', ['student' => $student->id    ]) }}" class="px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-[#16213A]">Kembali</a>
 
             <form action="" method="POST" onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
 

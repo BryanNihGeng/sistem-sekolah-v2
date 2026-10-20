@@ -108,11 +108,11 @@
                         </td>
 
                         <td class="px-5 py-4">
-                            {{ $student->class }}
+                            {{ $student->schoolClass?->name }}
                         </td>
 
                         <td class="px-5 py-4">
-                            {{ $student->major }}
+                            {{ $student->major?->name }}
                         </td>
 
                         <td class="px-5 py-4">

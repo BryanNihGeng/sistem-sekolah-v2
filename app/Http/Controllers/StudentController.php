@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Major;
+use App\Models\SchoolClass;
 use App\Http\Requests\Student\StoreRequest;
 use App\Http\Requests\Student\UpdateRequest;
 use App\Models\Student;
@@ -17,15 +18,15 @@ class StudentController extends Controller
         $class = $request->query('class');
         $major = $request->query('major');
 
-        $students = Student::select(['id', 'nis', 'name', 'class', 'major'])
+        $students = Student::select(['id', 'nis', 'name', 'class_id', 'major_id'])
             ->when($search, function ($query, $search) {
                 $query->where(function ($query) use ($search) {
                     $query->where('name', 'like', "%{$search}%")
                         ->orWhere('nis', 'like', "%{$search}%");
                 });
             })
-            ->when($class, fn($query, $class) => $query->where('class', '=', $class))
-            ->when($major, fn($query, $major) => $query->where('major', '=', $major))
+            ->when($class, fn($query, $class) => $query->where('class_id', '=', $class))
+            ->when($major, fn($query, $major) => $query->where('major_ids', '=', $major))
             ->paginate(10)
             ->withQueryString();
 
@@ -99,6 +100,7 @@ class StudentController extends Controller
 
     public function destroy(Student $student)
     {
+        $student->subjects()->detach();
         $student->delete();
         return redirect()->route('students.index');
     }
