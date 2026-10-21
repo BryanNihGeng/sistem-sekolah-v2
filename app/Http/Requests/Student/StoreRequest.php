@@ -26,20 +26,22 @@ class StoreRequest extends FormRequest
             'nis' => ['required', 'string', 'size:4', 'unique:students,nis'],
             'name' => ['required', 'string'],
             'gender' => ['required', 'string', 'in:Laki-laki, Perempuan'],
-            'major' => ['required', 'string', 'in:AKL,TKJ,BiD'],
-            'class' => ['required', 'string']
+            'major_id' => ['required', 'exists:majors,id'],
+            'class_id' => ['required', 'exists:classes,id'],
+            'user_id' => ['required', 'exists:users,id', 'unique:students,user_id'],
         ];
     }
 
 
     public function attributes()
     {
-        return[
-                'nis' => 'Nomor Induk Siswa',
-                'name' => 'Nama Lengkap',
-                'gender' => "Jenis Kelamin",
-                'class' => "Kelas",
-                'major' => "Jurusan"
+        return [
+            'nis' => 'Nomor Induk Siswa',
+            'name' => 'Nama Lengkap',
+            'gender' => "Jenis Kelamin",
+            'class_id' => "Kelas",
+            'major_id' => "Jurusan",
+            'user_id' => "Pengguna",
         ];
     }
 }

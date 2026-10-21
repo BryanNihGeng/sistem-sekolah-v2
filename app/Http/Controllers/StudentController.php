@@ -6,6 +6,7 @@ use App\Models\SchoolClass;
 use App\Http\Requests\Student\StoreRequest;
 use App\Http\Requests\Student\UpdateRequest;
 use App\Models\Student;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\UriQueryString;
 
@@ -63,9 +64,16 @@ class StudentController extends Controller
         $title = "Sistem Sekolah - Menambahkan Siswa";
         $description = "Menampilkan daftar siswa yang terdaftar";
 
+        $majors = Major::select(['id', 'name'])->get();
+        $schoolClasses = SchoolClass::select(['id', 'name'])->get();
+        $users= User::select(['id', 'name'])->get();
+
         return view('students.create', [
             'title' => $title,
             'description' => $description,
+            'majors' => $majors,
+            'schoolClasses' => $schoolClasses,
+            'users' => $users,
         ]);
     }
 
@@ -73,11 +81,18 @@ class StudentController extends Controller
     {
         $title = "Sistem Sekolah - Edit Siswa";
         $description = "Menampilkan daftar siswa yang terdaftar";
+        $majors = Major::select(['id', 'name'])->get();
+        $schoolClasses = SchoolClass::select(['id', 'name'])->get();
+        $users= User::select(['id', 'name'])->get();
+
 
         return view('students.edit', [
             'title' => $title,
             'description' => $description,
-            'student' => $student
+            'student' => $student,
+            'majors' => $majors,
+            'schoolClasses' => $schoolClasses,
+            'users' => $users,
         ]);
     }
 
